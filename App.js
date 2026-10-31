@@ -1,7 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import { Button, Text, TouchableOpacity, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 import Child from "./Child";
 import {styles} from "./styles";
+
+import LocalApiExample from './LocalApiExample';
+import RestApiExample from './RestApiExample';
 
 export default function App() {
   const [number,setNumber]=useState(0);
@@ -52,7 +55,11 @@ export default function App() {
           <Text>Curent Theme: {theme}</Text>
           <Button  title="Toggle Theme" onPress={()=>setTheme(theme==="Light"?"Dark":"Light")}/>
       </View>
-
+    
+    {/* <Text style={{fontSize: 18, marginBottom: 20}}>Data Fetching</Text> */}
+    <Text>Data Fetching</Text>
+    <LocalApiExample/>
+    <RestApiExample/>
 
     </View>
   );
